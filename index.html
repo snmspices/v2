@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header class="hero">
+  <header class="hero fade-in-section">
     <img src="SNM_Spices_Logo_HD.png" alt="SNM Spices Logo" class="logo" />
     <nav>
       <ul>
@@ -25,25 +25,28 @@
   <main>
 
     <!-- ABOUT / OUR STORY -->
-<section id="about" class="section">
-  <img src="about us.png" alt="About SNM" class="section-image" />
-  <h2>Our Story</h2>
+    <section id="about" class="section">
+      <div class="about-blur-wrapper">
+        <img src="about us.png" alt="About SNM" class="section-image" />
+      </div>
+      <div class="fade-in-section">
+        <h2>Our Story</h2>
+        <p>At SNM Spices, we don't just pack powders — we preserve purity.</p>
+        <p>What started as a humble flour mill in 2008 in Vilayur village, Kerala, has grown into a mission to deliver truly chemical-free, unadulterated spices to families who care about their health.</p>
+        <p>Our founding belief is simple: <em>“If we feed our families with love, we must feed them with purity too.”</em></p>
 
-      <p>At SNM Spices, we don't just pack powders — we preserve purity.</p>
-      <p>What started as a humble flour mill in 2008 in Vilayur village, Kerala, has grown into a mission to deliver truly chemical-free, unadulterated spices to families who care about their health.</p>
-      <p>Our founding belief is simple: <em>“If we feed our families with love, we must feed them with purity too.”</em></p>
+        <p>SNM Spices is a family-run initiative rooted in tradition and health.</p>
+        <p>Our father started a small flour mill in 2008 — not to grow a big business, but to ensure the people in our village had access to clean, hygienic, and pure grains.</p>
+        <p>Over time, his concern shifted to spices — often mixed with chemicals, colorants, and harmful preservatives in the market. So he began grinding spices himself — one batch at a time — to protect our plates and our people.</p>
 
-      <p>SNM Spices is a family-run initiative rooted in tradition and health.</p>
-      <p>Our father started a small flour mill in 2008 — not to grow a big business, but to ensure the people in our village had access to clean, hygienic, and pure grains.</p>
-      <p>Over time, his concern shifted to spices — often mixed with chemicals, colorants, and harmful preservatives in the market. So he began grinding spices himself — one batch at a time — to protect our plates and our people.</p>
+        <p>Years later, his son — a naturopathy doctor with international experience — returned home, shocked to learn how even certified products contained slow poisons. Another son, a mechanic and video editor, returned from Dubai to explore India’s spice varieties and reconnect with roots. The youngest supported with sourcing and farmer connections.</p>
 
-      <p>Years later, his son — a naturopathy doctor with international experience — returned home, shocked to learn how even certified products contained slow poisons. Another son, a mechanic and video editor, returned from Dubai to explore India’s spice varieties and reconnect with roots. The youngest supported with sourcing and farmer connections.</p>
-
-      <p>Together, we created SNM Spices — a brand built on truth, trust, and health.</p>
+        <p>Together, we created SNM Spices — a brand built on truth, trust, and health.</p>
+      </div>
     </section>
 
     <!-- MISSION -->
-    <section class="section">
+    <section class="section fade-in-section">
       <h2>Our Mission</h2>
       <p>Our mission is simple: To bring back trust in food — starting with the spices we use every day.</p>
       <p>We are doctor-led, farmer-connected, and village-rooted.  
@@ -52,7 +55,7 @@
     </section>
 
     <!-- TIMELINE -->
-    <section id="timeline" class="section">
+    <section id="timeline" class="section fade-in-section">
       <h2>Our Journey</h2>
       <ul>
         <li><strong>2008 –</strong> Flour mill begins in Vilayur</li>
@@ -67,7 +70,7 @@
     </section>
 
     <!-- PRODUCTS -->
-    <section id="products" class="section">
+    <section id="products" class="section fade-in-section">
       <h2>Our Products</h2>
       <div class="product-grid">
         <div class="product-card">
@@ -98,7 +101,7 @@
     </section>
 
     <!-- REVIEWS -->
-    <section id="reviews" class="section">
+    <section id="reviews" class="section fade-in-section">
       <h2>What Our Customers Say</h2>
       <div class="review">
         <p>⭐️⭐️⭐️⭐️⭐️ “The chilli powder is just perfect. Not too spicy, but full of flavour!” – Anju, Kozhikode</p>
@@ -108,7 +111,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact" class="section fade-in-section">
       <h2>Get in Touch</h2>
       <p><strong>SNM Spices</strong><br>
       11/180 Koorachipadi, Viliayur West PO,<br>
@@ -129,40 +132,39 @@
   <footer>
     <p>&copy; 2025 SNM Spices – All rights reserved.</p>
   </footer>
-</body><script>
-  function handleScroll() {
-    const hero = document.querySelector('.hero');
-    const aboutWrap = document.querySelector('.about-blur-wrapper');
-    const fadeIns = document.querySelectorAll('.fade-in-section');
 
-    const scrollY = window.scrollY;
-    const windowH = window.innerHeight;
+  <!-- SCROLL SCRIPT -->
+  <script>
+    function handleScroll() {
+      const hero = document.querySelector('.hero');
+      const aboutWrap = document.querySelector('.about-blur-wrapper');
+      const fadeIns = document.querySelectorAll('.fade-in-section');
 
-    // Blur and fade for HERO
-    if (scrollY > hero.offsetHeight * 0.6) {
-      hero.classList.add('blur-active');
-    } else {
-      hero.classList.remove('blur-active');
-    }
+      const scrollY = window.scrollY;
+      const windowH = window.innerHeight;
 
-    // Blur and fade for ABOUT
-    if (aboutWrap && scrollY > aboutWrap.offsetTop - windowH * 0.66) {
-      aboutWrap.classList.add('blur-active');
-    } else {
-      aboutWrap.classList.remove('blur-active');
-    }
-
-    // Fade-in other content
-    fadeIns.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop < windowH * 0.9) {
-        section.classList.add('visible');
+      if (scrollY > hero.offsetHeight * 0.6) {
+        hero.classList.add('blur-active');
+      } else {
+        hero.classList.remove('blur-active');
       }
-    });
-  }
 
-  window.addEventListener('scroll', handleScroll);
-  window.addEventListener('load', handleScroll);
-</script>
+      if (aboutWrap && scrollY > aboutWrap.offsetTop - windowH * 0.66) {
+        aboutWrap.classList.add('blur-active');
+      } else {
+        aboutWrap.classList.remove('blur-active');
+      }
 
+      fadeIns.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < windowH * 0.9) {
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
+  </script>
+</body>
 </html>
