@@ -11,15 +11,15 @@ a {
 }
 
 header.hero {
-  position: relative;
-  height: 60vh;
-  background: url('beenas kitchen.png') center/cover no-repeat;
+  background: #000;
+  height: auto;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1;
 }
+
 
 .hero-overlay {
   position: absolute;
