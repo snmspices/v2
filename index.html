@@ -129,5 +129,40 @@
   <footer>
     <p>&copy; 2025 SNM Spices – All rights reserved.</p>
   </footer>
-</body>
+</body><script>
+  function handleScroll() {
+    const hero = document.querySelector('.hero');
+    const aboutWrap = document.querySelector('.about-blur-wrapper');
+    const fadeIns = document.querySelectorAll('.fade-in-section');
+
+    const scrollY = window.scrollY;
+    const windowH = window.innerHeight;
+
+    // Blur and fade for HERO
+    if (scrollY > hero.offsetHeight * 0.6) {
+      hero.classList.add('blur-active');
+    } else {
+      hero.classList.remove('blur-active');
+    }
+
+    // Blur and fade for ABOUT
+    if (aboutWrap && scrollY > aboutWrap.offsetTop - windowH * 0.66) {
+      aboutWrap.classList.add('blur-active');
+    } else {
+      aboutWrap.classList.remove('blur-active');
+    }
+
+    // Fade-in other content
+    fadeIns.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < windowH * 0.9) {
+        section.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('load', handleScroll);
+</script>
+
 </html>
