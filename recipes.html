@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beena's Kitchen – SNM Spices</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beena’s Kitchen Recipes</title>
   <style>
     body {
       background-color: #0e0e0e;
@@ -12,20 +11,27 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
     }
+
     .hero {
       position: relative;
       height: 100vh;
       overflow: hidden;
+      background-color: #000;
     }
+
     .hero img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: top;
+      background-color: #000;
       transition: filter 0.5s ease;
     }
+
     .hero.blur-active img {
       filter: blur(6px) brightness(0.6);
     }
+
     .content-section {
       padding: 60px 20px;
       max-width: 960px;
@@ -33,23 +39,28 @@
       opacity: 0;
       transition: opacity 1s ease;
     }
+
     .content-section.visible {
       opacity: 1;
     }
+
     h1, h2 {
       color: #d4af37;
     }
+
     .recipe {
       margin-bottom: 50px;
       border-bottom: 1px solid #555;
       padding-bottom: 30px;
     }
+
     .recipe img {
       width: 100%;
       max-height: 300px;
       object-fit: cover;
       margin: 10px 0;
     }
+
     .nutrition, .health {
       font-size: 0.95em;
       color: #ccc;
@@ -58,99 +69,95 @@
   </style>
 </head>
 <body>
-
-  <div class="hero" id="beenas-hero">
+  <div class="hero" id="hero">
     <img src="beenas kitchen.png" alt="Beena's Kitchen" />
   </div>
 
-  <div class="content-section" id="recipes-content">
-    <h1>Beena’s Kitchen</h1>
+  <section class="content-section" id="recipes">
+    <h1>Beena’s Kitchen – Traditional Kerala Recipes</h1>
 
     <div class="recipe">
-      <h2>1. Sambar</h2>
-      <img src="#" alt="Sambar" />
-      <p>Classic Kerala lentil curry with vegetables and tamarind.</p>
-      <div class="nutrition">Calories: ~180 | Carbs: 20g | Protein: 6g | Fat: 8g</div>
-      <div class="health">✅ Good for diabetes | ✅ Heart-friendly | ❌ High BP: reduce salt</div>
+      <h2>Sambar</h2>
+      <img src="sambar.jpg" alt="Sambar" />
+      <p>Classic South Indian lentil and vegetable stew made with tamarind and freshly ground spices.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 150 kcal | 20g carbs | 6g protein | 4g fat</div>
+      <div class="health"><strong>Health Tips:</strong> High fiber, diabetic friendly, supports digestion</div>
     </div>
 
     <div class="recipe">
-      <h2>2. Aviyal</h2>
-      <img src="#" alt="Aviyal" />
-      <p>Mixed vegetables cooked in coconut-yogurt gravy, seasoned with curry leaves.</p>
-      <div class="nutrition">Calories: ~150 | Carbs: 15g | Protein: 4g | Fat: 9g</div>
-      <div class="health">✅ Balanced | ✅ Gut-friendly | ✅ High fiber</div>
+      <h2>Aviyal</h2>
+      <img src="aviyal.jpg" alt="Aviyal" />
+      <p>A thick mixture of vegetables and coconut, flavored with curry leaves and coconut oil.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 120 kcal | 14g carbs | 3g protein | 6g fat</div>
+      <div class="health"><strong>Health Tips:</strong> Great for blood pressure, rich in antioxidants</div>
     </div>
 
     <div class="recipe">
-      <h2>3. Beetroot Pachadi</h2>
-      <img src="#" alt="Beetroot Pachadi" />
-      <p>Beetroot in spiced coconut-yogurt base, often served in Sadya.</p>
-      <div class="nutrition">Calories: ~120 | Carbs: 10g | Protein: 3g | Fat: 7g</div>
-      <div class="health">✅ Antioxidant-rich | ✅ Good for blood pressure</div>
+      <h2>Beetroot Pachadi</h2>
+      <img src="beetroot_pachadi.jpg" alt="Beetroot Pachadi" />
+      <p>A festive pink dish made from beetroot, coconut, and curd, often part of Sadya meals.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 90 kcal | 10g carbs | 2g protein | 5g fat</div>
+      <div class="health"><strong>Health Tips:</strong> Supports liver, lowers blood pressure</div>
     </div>
 
     <div class="recipe">
-      <h2>4. Kadala Curry</h2>
-      <img src="#" alt="Kadala Curry" />
-      <p>Black chickpeas simmered in roasted coconut and spice gravy.</p>
-      <div class="nutrition">Calories: ~220 | Carbs: 25g | Protein: 8g | Fat: 10g</div>
-      <div class="health">✅ Protein-rich | ✅ Diabetic-friendly | ❌ For kidney issues: limit</div>
+      <h2>Kadala Curry</h2>
+      <img src="kadala.jpg" alt="Kadala Curry" />
+      <p>Black chickpeas in a spicy roasted coconut gravy. A staple with puttu or appam.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 200 kcal | 22g carbs | 9g protein | 6g fat</div>
+      <div class="health"><strong>Health Tips:</strong> Protein-rich, low glycemic, helps with sugar control</div>
     </div>
 
     <div class="recipe">
-      <h2>5. Ulli Kozhi (Shallot Chicken Curry)</h2>
-      <img src="#" alt="Ulli Kozhi" />
-      <p>Chicken cooked with shallots, garlic, and Kerala spices.</p>
-      <div class="nutrition">Calories: ~260 | Carbs: 6g | Protein: 18g | Fat: 17g</div>
-      <div class="health">✅ High-protein | ❌ Reduce oil for heart health</div>
+      <h2>Ulli Kozhi (Shallot Chicken)</h2>
+      <img src="ulli_kozhi.jpg" alt="Ulli Kozhi" />
+      <p>Chicken slow-cooked with shallots, garlic, and pepper — a rustic Kerala favorite.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 250 kcal | 4g carbs | 20g protein | 12g fat</div>
+      <div class="health"><strong>Health Tips:</strong> Anti-inflammatory, ideal for colds</div>
     </div>
 
     <div class="recipe">
-      <h2>6. Coconut Arachu Chicken Curry</h2>
-      <img src="#" alt="Coconut Arachu Chicken" />
-      <p>Roasted coconut-based chicken curry with deep flavors.</p>
-      <div class="nutrition">Calories: ~280 | Carbs: 7g | Protein: 20g | Fat: 18g</div>
-      <div class="health">✅ Traditional taste | ❌ High BP: control salt</div>
+      <h2>Coconut Arachu Chicken Curry</h2>
+      <img src="coconut_arachu.jpg" alt="Coconut Arachu Chicken" />
+      <p>Chicken simmered in a paste of fresh coconut, fennel, and spices — creamy and comforting.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 270 kcal | 6g carbs | 18g protein | 14g fat</div>
+      <div class="health"><strong>Health Tips:</strong> High in healthy fats, good for muscle strength</div>
     </div>
 
     <div class="recipe">
-      <h2>7. Kudampuli Itta Meen Curry</h2>
-      <img src="#" alt="Kudampuli Fish Curry" />
-      <p>Fish curry made with Malabar tamarind (Kudampuli) and chilli.</p>
-      <div class="nutrition">Calories: ~200 | Carbs: 5g | Protein: 22g | Fat: 10g</div>
-      <div class="health">✅ Omega-rich | ✅ Anti-inflammatory | ✅ Diabetic-safe</div>
+      <h2>Kudampuli Itta Meen Curry</h2>
+      <img src="meen_curry.jpg" alt="Fish Curry" />
+      <p>Tamarind (kudampuli) infused fish curry with turmeric, ginger, and garlic.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 220 kcal | 2g carbs | 23g protein | 12g fat</div>
+      <div class="health"><strong>Health Tips:</strong> Omega-3 rich, good for heart health</div>
     </div>
 
     <div class="recipe">
-      <h2>8. Coconut Chutney</h2>
-      <img src="#" alt="Coconut Chutney" />
-      <p>Simple chutney with grated coconut, green chillies, and tempered mustard.</p>
-      <div class="nutrition">Calories: ~100 | Carbs: 4g | Protein: 2g | Fat: 9g</div>
-      <div class="health">✅ Good fat | ✅ Gut-soothing | ✅ Safe for all</div>
+      <h2>Coconut Chutney</h2>
+      <img src="coconut_chutney.jpg" alt="Coconut Chutney" />
+      <p>A simple blend of grated coconut, green chili, and curry leaves, perfect for dosa or idli.</p>
+      <div class="nutrition"><strong>Nutrition:</strong> 80 kcal | 3g carbs | 1g protein | 7g fat</div>
+      <div class="health"><strong>Health Tips:</strong> Boosts energy, high in good fats</div>
     </div>
 
-  </div>
+  </section>
 
   <script>
-    function handleScroll() {
-      const hero = document.getElementById('beenas-hero');
-      const content = document.getElementById('recipes-content');
+    const hero = document.getElementById("hero");
+    const content = document.getElementById("recipes");
+
+    window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const windowH = window.innerHeight;
+      const heroHeight = hero.offsetHeight;
 
-      if (scrollY > hero.offsetHeight * 0.6) {
-        hero.classList.add('blur-active');
-        content.classList.add('visible');
+      if (scrollY > heroHeight * 0.6) {
+        hero.classList.add("blur-active");
+        content.classList.add("visible");
       } else {
-        hero.classList.remove('blur-active');
-        content.classList.remove('visible');
+        hero.classList.remove("blur-active");
+        content.classList.remove("visible");
       }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('load', handleScroll);
+    });
   </script>
-
 </body>
 </html>
