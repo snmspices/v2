@@ -13,15 +13,30 @@
       font-family: 'Segoe UI', sans-serif;
       scroll-behavior: smooth;
     }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #111;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: gold;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
     .hero {
-      position: relative;
       text-align: center;
       padding: 30px;
       background-color: #000;
+      transition: filter 0.4s ease;
     }
     .hero img.logo {
       max-width: 200px;
-      transition: filter 0.4s ease;
+      filter: none;
     }
     .blur-active img.logo {
       filter: blur(3px) brightness(0.6);
@@ -69,6 +84,7 @@
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      text-decoration: none;
     }
     .buy-button img {
       width: 18px;
@@ -90,8 +106,17 @@
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Shop</a>
+    <a href="recipes.html">Beena’s Kitchen</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <!-- HERO -->
-  <header class="hero fade-in-section">
+  <header class="hero fade-in-section" id="home">
     <img src="SNM_Spices_Logo_HD.png" alt="SNM Spices Logo" class="logo" />
   </header>
 
@@ -102,24 +127,35 @@
     </div>
     <div class="fade-in-section">
       <h2>Our Story</h2>
-      <p>At SNM Spices, we don't just pack powders — we preserve purity...</p>
-      <!-- Full story text from your content here -->
+      <p>At SNM Spices, we don't just pack powders — we preserve purity.</p>
+      <p>What started as a humble flour mill in 2008 in Vilayur village, Kerala, has grown into a mission to deliver truly chemical-free, unadulterated spices to families who care about their health.</p>
+      <p>Our founding belief is simple: <em>“If we feed our families with love, we must feed them with purity too.”</em></p>
+      <p>SNM Spices is a family-run initiative rooted in tradition and health. Our father started a small flour mill in 2008 — not to grow a big business, but to ensure the people in our village had access to clean, hygienic, and pure grains. Over time, his concern shifted to spices — often mixed with chemicals, colorants, and harmful preservatives in the market.</p>
+      <p>So he began grinding spices himself — one batch at a time — to protect our plates and our people.</p>
+      <p>Years later, his son — a naturopathy doctor with international experience — returned home, shocked to learn how even certified products contained slow poisons. Another son, a mechanic and video editor, returned from Dubai to explore India’s spice varieties and reconnect with roots. The youngest supported with sourcing and farmer connections.</p>
+      <p>Together, we created SNM Spices — a brand built on truth, trust, and health.</p>
     </div>
   </section>
 
   <!-- OUR MISSION -->
   <section class="section fade-in-section">
     <h2>Our Mission</h2>
-    <p>To bring back trust in food — starting with the spices we use every day...</p>
+    <p>To bring back trust in food — starting with the spices we use every day.</p>
+    <p>We are doctor-led, farmer-connected, and village-rooted. We support organic farming, local health, and ethical living.</p>
+    <p>We believe healing begins with the basics — and food is medicine.</p>
   </section>
 
   <!-- OUR JOURNEY -->
   <section class="section fade-in-section">
     <h2>Our Journey</h2>
-    <p>2008 – Flour mill begins in Vilayur<br>
-       2016 – Family starts focusing on spice purity<br>
-       2023 – SNM Spices officially launched<br>
-       2025 – Production and local supply begins...</p>
+    <p>2008 – Flour mill begins in Vilayur</p>
+    <p>2016 – Family starts focusing on spice purity</p>
+    <p>2023 – SNM Spices officially launched</p>
+    <p>2025 – Production and local supply begins</p>
+    <p>2026 – Launch of Beena’s Kitchen (healthy lifestyle recipes)</p>
+    <p>2027 – First physical outlet of Beena’s Kitchen</p>
+    <p>2028–2029 – Reach every home in Vilayur village</p>
+    <p>2030–2035 – Open wellness center for lifestyle change support</p>
   </section>
 
   <!-- PRODUCTS -->
@@ -155,9 +191,7 @@
   <section class="section fade-in-section">
     <h2>Beena’s Kitchen</h2>
     <p>Coming soon: A recipe section with health in mind.</p>
-    <a class="buy-button" href="recipes.html">
-      Explore Recipes
-    </a>
+    <a class="buy-button" href="recipes.html">Explore Recipes</a>
   </section>
 
   <!-- REVIEWS -->
@@ -169,7 +203,7 @@
   </section>
 
   <!-- CONTACT + MAP -->
-  <section class="section fade-in-section">
+  <section id="contact" class="section fade-in-section">
     <h2>Contact</h2>
     <p>📍 SNM Spices, 11/180 Koorachipadi, Viliayur West PO, Pattambi, Palakkad, Kerala, PIN 679309</p>
     <p>📞 <a href="tel:+916282960125" style="color: gold;">+91 6282 960 125</a></p>
@@ -190,7 +224,6 @@
       const hero = document.querySelector('.hero');
       const aboutWrap = document.querySelector('.about-blur-wrapper');
       const fadeIns = document.querySelectorAll('.fade-in-section');
-
       const scrollY = window.scrollY;
       const windowH = window.innerHeight;
 
